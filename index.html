@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brædstrup Frisør</title>
+    <link rel="icon" type="image/png" href="https://img.freepik.com/premium-vector/barber-shop-icon-logo-vector-icon-template_598213-1562.jpg">
+    <style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* tillad naturlig scroll på mobil */
+    }
+
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        height: 100dvh; /* Dynamisk mobilvenlig højde */
+        overflow: hidden;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    /* Sikrer at siden ikke zoomer på inputfelter på iOS */
+    @viewport {
+        width: device-width;
+        zoom: 1.0;
+    }
+</style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src="https://braedstrup-hair-haven.lovable.app" allowfullscreen></iframe>
+    </div>
+</body>
+</html>
