@@ -56,9 +56,7 @@
     </div>
 
     <script>
-        
-        let lastX = 0;
-
+        // Lås X-scroll
         function lockXScroll() {
             if (window.scrollX !== 0) {
                 window.scrollTo(0, window.scrollY);
@@ -68,12 +66,30 @@
 
         lockXScroll();
 
-        
         document.addEventListener('touchmove', function () {
             if (window.scrollX !== 0) {
                 window.scrollTo(0, window.scrollY);
             }
         }, { passive: false });
+
+        // Scroll animation ned og op ved load
+        window.addEventListener('load', () => {
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+
+            // Scroll ned
+            window.scrollTo({
+                top: totalHeight,
+                behavior: 'smooth'
+            });
+
+            // Scroll op igen efter 300ms
+            setTimeout(() => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        });
     </script>
 </body>
 </html>
